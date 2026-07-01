@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::view('/','welcome');
+Route::view('/home','home'); #without 'GET' using view we can route & view webpage,
+                             # but for also use the 'controller' we need to use 'GET' method.
