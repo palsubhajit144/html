@@ -12,10 +12,12 @@ class UserController extends Controller
     }
 
     public function profile(){
+        $users = ['subha', 'sourav', 'subhajit', 'subhankar', 'subham', 'subhadeep', 'subhrangshu'];
         return view('profile', [
                         'name' => 'Alice',
                         'age' => 22,
-                        'city' => 'Kolkata'
+                        'city' => 'Kolkata',
+                        'users' => $users
                         ]);
     }
 }
