@@ -24,5 +24,6 @@ use App\Http\Controllers\CmsAdmin;
 
 
 Route::get('/',[CmsAdmin::class,'home']);
+Route::get('/default-page',[CmsAdmin::class,'welcome']);
 Route::get('/user/{name}',[UserController::class,'getUserName']);
 Route::get('/profile',[UserController::class,'profile']);
