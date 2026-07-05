@@ -25,4 +25,5 @@ use App\Http\Controllers\UserMgmt;
 
 Route::get('/',[CmsAdmin::class,'home']);
 Route::get('/user/{name}',[UserMgmt::class,'getuser']);
-Route::get('login',[UserMgmt::class,'admin']);
+Route::get('/login',[UserMgmt::class,'admin']);
+Route::get('/about',[UserMgmt::class,'about']);

@@ -1,3 +1,4 @@
+@include('common.header')
 <!DOCTYPE html>
 <title> {{ $key }} </title>
 <body> 
@@ -15,6 +16,6 @@
         {{ $i +1 }}. {{$users[$i]}} <br>
     @endfor
 </ul>
+@include('common.footer',['page'=>"View from User Page."])
 </body>
 </html>
-

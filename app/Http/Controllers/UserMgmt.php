@@ -19,4 +19,9 @@ class UserMgmt extends Controller
     public function admin(){
         return view('admin.login');
     }
+
+    public function about(){
+        return view('about');
+
+    }
 }
