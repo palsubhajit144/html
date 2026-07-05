@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class CmsAdmin extends Controller
 {
     //
-    public function welcome(){
-        return view('welcome');
+    public function home() {
 
-    }
+        $title="Home Page";
+        $content="This Home Page is Managed from CmsAdmin Controller.";
 
-    public function home(){
-        return view('home', [
-            'title' => 'Home Page',
-            'content' => 'This is the home page content.'
+        return view('home',[
+            'title' => $title,
+            'content' => $content
         ]);
-    }
+            
+        }
 }

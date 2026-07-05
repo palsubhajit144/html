@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title }}</title>
+    <title> {{ $title }} </title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #f8f669;
+            display: fles;
+            height: fit-content;
+        }
+        p {
+            color: #350878;
+            font-size: 23px;
+            border: black;
+            border-top-style: solid;
+        }
+        
+    </style>
 </head>
-<body style="background-color: lightgreen;">
-    <h1> Home Controlled by CMS Admin.</h1>
-    <p>{{ $content }}</p>
+<body>
+    <h1> {{ $content }} </h1>
+    <p>Welcome to the Laravel Home Page.</p>
 </body>
 </html>

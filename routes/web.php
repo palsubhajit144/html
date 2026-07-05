@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\CmsAdmin;
+use App\Http\Controllers\UserMgmt;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,5 @@ use App\Http\Controllers\CmsAdmin;
 
 
 Route::get('/',[CmsAdmin::class,'home']);
-Route::get('/default-page',[CmsAdmin::class,'welcome']);
-Route::get('/user/{name}',[UserController::class,'getUserName']);
-Route::get('/profile',[UserController::class,'profile']);
+Route::get('/user/{name}',[UserMgmt::class,'getuser']);
+Route::get('login',[UserMgmt::class,'admin']);
