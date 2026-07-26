@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CmsAdmin;
 use App\Http\Controllers\UserMgmt;
+use App\Http\Controllers\Index;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::get('/',[CmsAdmin::class,'home']);
 Route::get('/user/{name}',[UserMgmt::class,'getuser']);
 Route::get('/login',[UserMgmt::class,'admin']);
 Route::get('/about',[UserMgmt::class,'about']);
+
+Route::get('/index/{name}',[Index::class,'index']);
