@@ -21,5 +21,6 @@
 <body>
     <h1> {{ $content }} </h1>
     <p>Welcome to the Laravel Home Page.</p>
+    <a href="{{ route('user-form') }}">User Form Page</a>
 </body>
 </html>

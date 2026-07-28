@@ -35,6 +35,6 @@ Route::get('/index/{name}',[Index::class,'index']);
 
 Route::get('/user-form', function () {
     return view('user-form');
-});
+})->name('user-form');
 // Route::view('/user-form','user-form');
 Route::post('adduser',[AddUser::class,'adduser']);

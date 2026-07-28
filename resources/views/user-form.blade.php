@@ -115,7 +115,7 @@
         }
 
         .error{
-            background: #ed8a8a;
+            background: #f5a5a5;
             color: #ed0b0b;
             padding: 3px 10px;
             border-radius: 20px;
@@ -142,7 +142,7 @@
 <!-- Name -->
 
     <div class="input-wrapper">
-        <input type="text" placeholder="Enter First Name" name="firstname">
+        <input type="text" placeholder="Enter First Name" value="{{ old('firstname') }}"name="firstname">
     <span>
         @error('firstname') 
             <x-message-banner msg="{{ $message }}" class="error" /> 
@@ -152,7 +152,7 @@
 
 
     <div class="input-wrapper">
-    <input type="text" placeholder="Enter Last Name" name="lastname">
+    <input type="text" placeholder="Enter Last Name" value="{{ old('lastname') }}" name="lastname">
      <span>
         @error('lastname') 
             <x-message-banner msg="{{ $message }}" class="error" /> 
@@ -161,7 +161,7 @@
     </div>
 
     <div class="input-wrapper">
-    <input type="text" placeholder="Enter Email ID" name="email">
+    <input type="text" placeholder="Enter Email ID" value="{{ old('email') }}" name="email">
      <span>
         @error('email') 
             <x-message-banner msg="{{ $message }}" class="error" /> 
@@ -253,6 +253,7 @@
 
     <input type="text"
         placeholder="Enter Aadhaar Number"
+        value="{{ old('aadhar_number') }}"
         name="aadhar_number">
     <span>
         @error('aadhar_number') 
@@ -268,6 +269,7 @@
 
     <input type="text"
         placeholder="Enter Phone Number"
+        value="{{ old('phone_number') }}"
         name="phone_number">
 
     <span>
@@ -290,6 +292,7 @@
 
     <input type="text"
         placeholder="Enter PAN Number"
+        value="{{ old('pan_number') }}"
         name="pan_number">
     <span>
     @error('pan_number') 
