@@ -4,10 +4,9 @@
     <title>Add User</title>
 
     <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            background: lightpink;
+    
+        body{
+            background-color: lightpink;
         }
 
         h2 {

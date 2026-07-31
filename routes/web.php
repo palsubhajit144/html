@@ -6,6 +6,9 @@ use App\Http\Controllers\UserMgmt;
 use App\Http\Controllers\Index;
 use App\Http\Controllers\UserForm;
 use App\Http\Controllers\AddUser;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +30,18 @@ use App\Http\Controllers\AddUser;
 
 
 Route::get('/',[CmsAdmin::class,'home']);
-Route::get('/user/{name}',[UserMgmt::class,'getuser']);
-Route::get('/login',[UserMgmt::class,'admin']);
-Route::get('/about',[UserMgmt::class,'about']);
 
+Route::controller(UserMgmt::class)->group(function(){
+    Route::get('/user/{name}','getuser');
+    Route::get('/login','admin');
+    Route::get('/about','about');
+});
 Route::get('/index/{name}',[Index::class,'index']);
 
-Route::get('/user-form', function () {
-    return view('user-form');
-})->name('user-form');
-// Route::view('/user-form','user-form');
+Route::view('/user-form','user-form')->name('user-form');
+
 Route::post('adduser',[AddUser::class,'adduser']);
+
+Route::get('/manage_user', [UserController::class, 'manage_user'])->name('manage_user');
+
+Route::get('/student',[StudentController::class,'getstudent']);
