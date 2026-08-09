@@ -9,6 +9,7 @@ use App\Http\Controllers\AddUser;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Upload;
+use App\Http\Controllers\StudentRegistration;
 
 use App\Models\User;
 
@@ -56,6 +57,11 @@ Route::get('/view-file/{filename}', [Upload::class, 'viewer'])
 
 
 // College
+// Route::view('/student/registration','college.registration')->name('student_reg');
+Route::get('/student/registration', function () { 
+    return view ('college.registration');
+    })->name('student_reg');
+Route::post('/student/reg_data', [StudentRegistration::class,'registration']);
 
 Route::view('/student/login','college.student')->name('student_login');
 Route::view('/master/login','college.master')->name('master_login');

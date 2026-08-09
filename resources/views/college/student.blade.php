@@ -172,6 +172,8 @@
             font-weight: 400;
 
             color: #ffffff;
+
+            font-family: -webkit-body
         }
 
 
@@ -526,6 +528,15 @@
             color: #7467e5;
         }
 
+        .registration {
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .registration:hover {
+            text-decoration: underline;
+        }
+
 
         /* =========================================
            LOGIN BUTTON
@@ -852,10 +863,10 @@
             </h1>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat
-                volutpat.
+                This is a demo practice lab, where we have made a student's login portal.
+                his portal is designed to provide students with a simple and user-friendly login experience.
+                Students can use this portal to access their account and explore the available features.
+                This project is created for learning and practicing web development using Laravel.
             </p>
 
         </div>
@@ -969,6 +980,12 @@
                 <button type="submit" class="login-btn" >
                     LOGIN
                 </button>
+
+                {{-- New Registration --}}
+                <div>
+                    <a href="{{ route('student_reg') }}" class="registration">New Registration</a>
+
+                </div>
 
             </form>
 
