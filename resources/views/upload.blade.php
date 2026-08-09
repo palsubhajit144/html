@@ -4,13 +4,14 @@
     <title>File Upload</title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
         }
 
         .container {
-            width: 600px;
+            width: 700px;
             margin: auto;
         }
 
@@ -32,15 +33,15 @@
 
         .file-link {
             margin-top: 20px;
-            padding: 15px;
+            padding: 20px;
             background: #f5f5f5;
             border-radius: 5px;
         }
 
         .view-button {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 18px;
+            margin-top: 15px;
+            padding: 12px 22px;
             background: #007bff;
             color: white;
             text-decoration: none;
@@ -50,6 +51,7 @@
         .view-button:hover {
             background: #0056b3;
         }
+
     </style>
 </head>
 
@@ -59,46 +61,46 @@
 
     <h2>Upload File</h2>
 
-    {{-- Success message --}}
     @if(session('success'))
+
         <div class="success">
             {{ session('success') }}
         </div>
+
     @endif
 
-    {{-- Validation errors --}}
+
     @if($errors->any())
+
         <div class="error">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+
+            @foreach($errors->all() as $error)
+
+                <div>
+                    {{ $error }}
+                </div>
+
+            @endforeach
+
         </div>
+
     @endif
 
-    {{-- Upload form --}}
-    <form action="{{ url('/upload') }}"
-          method="POST"
-          enctype="multipart/form-data">
+
+    <form action="{{ url('/upload') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
-        <input type="file"
-               name="file"
-               id="file"
-               required>
+        <input
+            type="file" name="file" id="file" required >
 
         <br><br>
 
-        <button type="submit">
-            Upload
-        </button>
+        <button type="submit">Upload</button>
 
     </form>
 
 
-    {{-- Show View File link after upload --}}
     @if(session('filename'))
 
         @php
@@ -115,13 +117,13 @@
 
             <br>
 
-            <a href="{{ url('/uploaded-file/' . rawurlencode($filename)) }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="view-button">
-
+            <a
+                href="{{ url('/view-file/' . rawurlencode($filename)) }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-button"
+            >
                 View File
-
             </a>
 
         </div>

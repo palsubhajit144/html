@@ -38,14 +38,11 @@ Route::controller(UserMgmt::class)->group(function(){
     Route::get('/login','admin');
     Route::get('/about','about');
 });
+
 Route::get('/index/{name}',[Index::class,'index']);
-
 Route::view('/user-form','user-form')->name('user-form');
-
 Route::post('adduser',[AddUser::class,'adduser']);
-
 Route::get('/manage_user', [UserController::class, 'manage_user'])->name('manage_user');
-
 Route::get('/student',[StudentController::class,'getstudent']);
 
 Route::view('/upload','upload');
