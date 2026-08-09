@@ -53,3 +53,9 @@ Route::get('/uploaded-file/{filename}', [Upload::class, 'viewFile'])
 
 Route::get('/view-file/{filename}', [Upload::class, 'viewer'])
     ->where('filename', '.*');
+
+
+// College
+
+Route::view('/student/login','college.student')->name('student_login');
+Route::view('/master/login','college.master')->name('master_login');
