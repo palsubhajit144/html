@@ -8,6 +8,8 @@ use App\Http\Controllers\UserForm;
 use App\Http\Controllers\AddUser;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Upload;
+
 use App\Models\User;
 
 /*
@@ -45,3 +47,12 @@ Route::post('adduser',[AddUser::class,'adduser']);
 Route::get('/manage_user', [UserController::class, 'manage_user'])->name('manage_user');
 
 Route::get('/student',[StudentController::class,'getstudent']);
+
+Route::view('/upload','upload');
+Route::post('upload',[Upload::class,'Upload']);
+
+Route::get('/uploaded-file/{filename}', [Upload::class, 'viewFile'])
+    ->where('filename', '.*');
+
+Route::get('/view-file/{filename}', [Upload::class, 'viewer'])
+    ->where('filename', '.*');
