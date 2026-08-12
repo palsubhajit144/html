@@ -1,0 +1,157 @@
+<style>
+    h2 {
+        color: #ae00ff;
+        text-decoration: underline;
+        margin-left: 5px;
+        }
+
+    .registration-form {
+        margin-top: 20px; 
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: auto;
+        padding: 20px; 
+        border: 1px solid #e799ee; 
+        border-radius: 5px; 
+        width: 900px; 
+        /* align-items: center; */
+        justify-content: center; 
+        background-color: #e5f3a6;
+        font-family: 'Courier New', monospace;
+        }
+    .name {
+        font-weight: bold;
+        margin-block: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;      
+        }
+
+    .gender {
+        margin-block: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        }
+
+    .gender-title {
+        font-weight: bold;
+        margin-right: 5px;
+        }
+
+</style>
+
+<div>
+    <h2>New Registration Form</h2>
+    <div class="registration-form">
+        <form action="/student/reg_data" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <div class="name">
+                <label for="first_name" >First Name:</label>
+                <input type="text" name="first_name" placeholder="Enter Your First Name" id="first_name">
+                
+                <label for="last_name" style="margin-left: 5px;">Last Name:</label>
+                <input type="text" name="last_name" placeholder="Enter Your Last Name" id="last_name">
+            </div>
+
+            <div class="gender">
+                <label class="gender-title">Gender:</label>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div>
+                <label for="dob" style="font-weight: bold; margin-block: 8px;">Date of Birth:</label>
+                <input type="date" name="dob" id="dob">
+            </div>
+
+            <div>
+                <label for="profile_picture" style="font-weight: bold;">Profile Picture:</label>
+                <input type="file" name="profile_picture" id="profile_picture">
+            </div>
+
+            <div>
+                <label for="state" style="font-weight: bold;">State:</label>
+                <select name="state" id="state">
+                    <option value="">Select State</option>
+                    <option value="wb">West Bengal</option>
+                    <option value="ori">Odisha</option>
+                    <option value="ass">Assam</option>
+                    <option value="tri">Tripura</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="address" style="font-weight: bold;">Address:</label>
+                <textarea style="width: 400px; height: 80px;"name="address" id="address" placeholder="Enter Your Address"></textarea>
+            </div>
+
+            <div>
+                <label for="class" style="font-weight: bold;">Class:</label>
+                <select name="class" id="class">
+                    <option value="">Select Class</option>
+                    <option value="1">Class 11</option>
+                    <option value="2">Class 12</option>
+                    <option value="3">First Year</option>
+                    <option value="4">Second Year</option>
+                    <option value="5">Third Year</option>
+                </select>
+
+                <label for="department" style="font-weight: bold;">Department:</label>
+                <select name="department" id="department">
+                    <option value="">Select Department</option>
+                    <option value="science">Science</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="arts">Arts</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="govt_id_type" style="font-weight: bold;">Government ID Type:</label>
+                <select name="govt_id_type" id="govt_id_type">
+                    <option value="">Select ID Type</option>
+                    <option value="aadhar">Aadhar Card</option>
+                    <option value="pan">PAN Card</option>
+                    <option value="voter">Voter ID</option>
+                </select>
+
+                <label for="govt_id_number" style="font-weight: bold;">Government ID Number:</label>
+                <input 
+                    style="width: 250px;"
+                    type="text" name="govt_id_number" 
+                    placeholder="Enter Your Government ID Number" 
+                    id="govt_id_number">
+            </div>
+
+            <div>
+                
+            </div>
+
+            <div>
+                <label for="govt_id_image" style="font-weight: bold;">Government ID Image:</label>
+                <input type="file" name="govt_id_image" id="govt_id_image">
+            </div>
+
+            <div>
+                <label for="phone" style="font-weight: bold;">Phone Number:</label>
+                <input 
+                    style="width: 250px;"
+                    type="text" name="phone" 
+                    placeholder="Enter Your Phone Number" 
+                    id="phone">
+            </div>
+
+            <!-- <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div> -->
+
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
