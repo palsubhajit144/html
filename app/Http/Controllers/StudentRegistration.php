@@ -8,6 +8,7 @@ class StudentRegistration extends Controller
 {
     //
     public function registration(Request $data) {
-        return $data;
+        return view('college.preview', ['college_data' => $data->all()]);
+
     }
 }

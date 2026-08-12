@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Preview</title>
+
+</head>
+
+<body>
+
+    <h1>Student Registration Preview</h1>
+
+    <p>
+        <strong>First Name:</strong>
+        {{ $college_data['first_name'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Last Name:</strong>
+        {{ $college_data['last_name'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Gender:</strong>
+        {{ $college_data['gender'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Date of Birth:</strong>
+        {{ $college_data['dob'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>State:</strong>
+        {{ $college_data['state'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Address:</strong>
+        {{ $college_data['address'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Class:</strong>
+        {{ $college_data['class'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Department:</strong>
+        {{ $college_data['department'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Government ID Type:</strong>
+        {{ $college_data['govt_id_type'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Government ID Number:</strong>
+        {{ $college_data['govt_id_number'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Phone:</strong>
+        {{ $college_data['phone'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Madhyamik Percentage:</strong>
+        {{ $college_data['madhyamik_percentage'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Higher Secondary Percentage:</strong>
+        {{ $college_data['higher_secondary_percentage'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        {{ $college_data['email'] ?? '' }}
+    </p>
+
+    <p>
+        <strong>Password:</strong>
+        ********
+    </p>
+
+</body>
+
+</html>

@@ -62,6 +62,9 @@ Route::get('/student/registration', function () {
     return view ('college.registration');
     })->name('student_reg');
 Route::post('/student/reg_data', [StudentRegistration::class,'registration']);
+Route::get('/student/preview', function () { 
+    return view ('college.preview');
+    })->name('student_preview');
 
 Route::view('/student/login','college.student')->name('student_login');
 Route::view('/master/login','college.master')->name('master_login');

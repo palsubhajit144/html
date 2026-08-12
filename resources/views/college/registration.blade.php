@@ -86,6 +86,24 @@
             font-weight: bold;
         }
 
+        .percentage-input {
+            position: relative;
+            display: inline-block;
+        }
+
+        .percentage-input input {
+            padding-right: 10px;
+        }
+
+        .percentage-input span {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #494949;
+            pointer-events: none;
+        }                
+
 
         /* Inputs, Select and Textarea */
 
@@ -664,16 +682,17 @@
                     <label for="madhyamik_percentage">
                         Madhyamik Percentage<span>*</span>:
                     </label>
-
-                    <input
-                        type="number"
-                        name="madhyamik_percentage"
-                        id="madhyamik_percentage"
-                        placeholder="Enter Percentage"
-                        min="0"
-                        max="100"
-                        step="0.01"
-                    >
+                    <div class="percentage-input">
+                        <input
+                            type="number"
+                            name="madhyamik_percentage"
+                            id="madhyamik_percentage"
+                            placeholder="Enter Percentage"
+                            min="0"
+                            max="100"
+                            step="0.01"
+                        > <span>%</span>
+                    </div>
 
                 </div>
 
@@ -685,17 +704,18 @@
                     <label for="higher_secondary_percentage">
                         Higher Secondary Percentage<span>*</span>:
                     </label>
+                    <div class="percentage-input">
 
-                    <input
-                        type="number"
-                        name="higher_secondary_percentage"
-                        id="higher_secondary_percentage"
-                        placeholder="Enter Percentage"
-                        min="0"
-                        max="100"
-                        step="0.01"
-                    >
-
+                        <input
+                            type="number"
+                            name="higher_secondary_percentage"
+                            id="higher_secondary_percentage"
+                            placeholder="Enter Percentage"
+                            min="0"
+                            max="100"
+                            step="0.01"
+                        > <span>%</span>
+                    </div>
                 </div>
 
 
