@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successful</title>
+</head>
+
+<body>
+
+    <div class="success-container">
+
+    <h2>Registration Successful!</h2>
+
+    <p>{{ session('success') }}</p>
+
+    <div class="student-details">
+        <p>
+            <strong>Student ID:</strong>
+            {{ session('student_id') }}
+        </p>
+
+        <p>
+            <strong>Student Name:</strong>
+            {{ session('student_name') }}
+        </p>
+    </div>
+
+</div>
+
+</body>
+
+</html>

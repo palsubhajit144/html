@@ -61,10 +61,19 @@ Route::get('/view-file/{filename}', [Upload::class, 'viewer'])
 Route::get('/student/registration', function () { 
     return view ('college.registration');
     })->name('student_reg');
+    
 Route::post('/student/reg_data', [StudentRegistration::class,'registration']);
+
 Route::get('/student/preview', function () { 
     return view ('college.preview');
     })->name('student_preview');
 
 Route::view('/student/login','college.student')->name('student_login');
 Route::view('/master/login','college.master')->name('master_login');
+
+Route::post('/student/register/final', [StudentRegistration::class, 'finalSubmit'])
+    ->name('student.register.final');
+
+Route::get('/student/success', function () {
+return view('college.success');
+})->name('student.success');

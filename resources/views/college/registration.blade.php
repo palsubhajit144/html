@@ -41,7 +41,7 @@
         /* Main Form Box */
 
         .registration-form {
-            width: 900px;
+            width: 1000px;
             max-width: 100%;
             margin: 0 auto;
             padding: 25px;
@@ -277,6 +277,10 @@
                 width: 100%;
             }
 
+            .form-group input#madhyamik_percentage {
+                width: 200px !important;
+            }
+
 
             /* Keep gender options in one row */
 
@@ -287,13 +291,36 @@
 
         }
 
+        .form-group .percentage-input input#madhyamik_percentage {
+            width: 200px !important;
+            max-width: 200px !important;
+            min-width: 0 !important;
+            box-sizing: border-box;
+            flex: 0 0 200px !important;
+        }
+
+        .form-group .percentage-input input#higher_secondary_percentage {
+            width: 200px !important;
+            max-width: 200px !important;
+            min-width: 0 !important;
+            box-sizing: border-box;
+        }
+        
     </style>
 
 </head>
 
 
 <body>
-
+    <!-- @if ($errors->any())
+        <div style="color: red; margin-bottom: 20px;">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif -->
 
     <h2>New Registration Form</h2>
 
@@ -330,7 +357,11 @@
                         name="first_name"
                         id="first_name"
                         placeholder="Enter First Name"
+                        value="{{ old('first_name') }}"
                     >
+                    @error('first_name')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
                 </div>
 
@@ -348,8 +379,11 @@
                         name="last_name"
                         id="last_name"
                         placeholder="Enter Last Name"
+                        value="{{ old('last_name') }}"
                     >
-
+                    @error('last_name')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
                 </div>
 
 
@@ -366,7 +400,6 @@
                     Gender<span>*</span>:
                 </label>
 
-
                 <input
                     type="radio"
                     name="gender"
@@ -378,7 +411,6 @@
                     Male
                 </label>
 
-
                 <input
                     type="radio"
                     name="gender"
@@ -389,6 +421,10 @@
                 <label for="female">
                     Female
                 </label>
+
+                @error('gender')
+                        <span style="color: red;">{{ $message }}</span>
+                @enderror
 
             </div>
 
@@ -408,6 +444,9 @@
                     name="dob"
                     id="dob"
                 >
+                @error('dob')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
             </div>
 
@@ -427,7 +466,7 @@
                     name="profile_picture"
                     id="profile_picture"
                 >
-
+                
             </div>
 
 
@@ -464,7 +503,9 @@
                     </option>
 
                 </select>
-
+                @error('state')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
             </div>
 
 
@@ -482,7 +523,11 @@
                     name="address"
                     id="address"
                     placeholder="Enter Your Address"
+                    value="{{ old('address') }}"
                 ></textarea>
+                @error('address')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
             </div>
 
@@ -529,6 +574,10 @@
                         </option>
 
                     </select>
+                    @error('class')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
+
 
                 </div>
 
@@ -560,6 +609,10 @@
                         </option>
 
                     </select>
+                    @error('department')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
+
 
                 </div>
 
@@ -604,6 +657,9 @@
                         </option>
 
                     </select>
+                    @error('govt_id_type')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
                 </div>
 
@@ -621,7 +677,11 @@
                         name="govt_id_number"
                         id="govt_id_number"
                         placeholder="Enter Government ID Number"
+                        value="{{ old('govt_id_number') }}"
                     >
+                    @error('govt_id_number')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
                 </div>
 
@@ -663,7 +723,11 @@
                     name="phone"
                     id="phone"
                     placeholder="Enter Phone Number"
+                    value="{{ old('phone') }}"
                 >
+                @error('phone')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
             </div>
 
@@ -684,6 +748,7 @@
                     </label>
                     <div class="percentage-input">
                         <input
+                            style="width: 300px;"
                             type="number"
                             name="madhyamik_percentage"
                             id="madhyamik_percentage"
@@ -691,8 +756,13 @@
                             min="0"
                             max="100"
                             step="0.01"
+                            value="{{ old('madhyamik_percentage') }}"
                         > <span>%</span>
+                        
                     </div>
+                    @error('madhyamik_percentage')
+                        <span style="color: red;">{{ $message }}</span>
+                    @enderror
 
                 </div>
 
@@ -714,8 +784,13 @@
                             min="0"
                             max="100"
                             step="0.01"
+                            value="{{ old('higher_secondary_percentage') }}"
                         > <span>%</span>
+                        
                     </div>
+                    @error('higher_secondary_percentage')
+                            <span style="color: red;">{{ $message }}</span>
+                    @enderror
                 </div>
 
 
@@ -781,7 +856,11 @@
                     name="email"
                     id="email"
                     placeholder="Enter Your Email"
+                    value="{{ old('email') }}"
                 >
+                @error('email')
+                    <span style="color: red;">{{ $message }}</span>
+                @enderror
 
             </div>
 
@@ -802,6 +881,9 @@
                     id="password"
                     placeholder="Enter Password"
                 >
+                @error('password')
+                    <span style="color: red;">{{ $message }}</span>
+                @enderror
 
             </div>
 
